@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Sameer</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #000;
+            color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header Styles */
+        header {
+            background: #111;
+            color: #ff0000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff0000;
+        }
+
+        /* Hamburger Menu (Mobile) */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: #111;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            width: 200px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .mobile-menu a {
+            padding: 10px 20px;
+            border-bottom: 1px solid #222;
+            text-align: center;
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu a:hover {
+            background: #222;
+            color: #ff0000;
+        }
+
+        /* Responsive Header */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* Post Section */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .post {
+            background: #222;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+        .post:hover {
+            transform: scale(1.05);
+        }
+
+        .post img {
+            width: 100%;
+            height: auto;
+            /* float: cen; */
+        }
+
+        .post-title {
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            background: #111;
+            color: #ff0000;
+        }
+
+        /* Popup Styles */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            width: 90%;
+            max-width: 800px;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .popup-content iframe {
+            flex: 1;
+            border: none;
+        }
+
+        .popup-header {
+            padding: 15px;
+            background: #ff0000;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .popup-header .close {
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sameer</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Contact</a>
+            <a href="#">Policy</a>
+            <a href="#">DMCA</a>
+        </nav>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#">Home</a>
+            <a href="#">Contact</a>
+            <a href="#">Policy</a>
+            <a href="#">DMCA</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Posts -->
+        <div class="post" data-url="https://allinonereborn.com/spicetv-web/player.html?url=https%3A%2F%2Fallinonereborn.com%2Ftest.m3u8%3Fid%3D113&name=SONY%20TV%20UK">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlYxkSGO4y13pSaNBM2xyTSK4S1FAkX8N6dQ&s" alt="Post 1">
+            <div class="post-title">Sony TV HD</div>
+        </div>
+        <div class="post" data-url="https://allinonereborn.com/spicetv-web/player.html?url=https%3A%2F%2Fallinonereborn.com%2Ftest.m3u8%3Fid%3D25084&name=SONY%20SAB%20%20UK">
+            <img src="https://1000logos.net/wp-content/uploads/2023/01/Sony-SAB-logo.png" alt="Post 1">
+            <div class="post-title">Sony SAB UK</div>
+        </div>
+        <div class="post" data-url="https://allinonereborn.com/spicetv-web/player.html?url=https%3A%2F%2Fallinonereborn.com%2Ftest.m3u8%3Fid%3D147&name=SONY%20MAX%20UK">
+            <img src="https://medianet.mv/media/channel/162x0-icon.png" alt="Post 1">
+            <div class="post-title">Sony MAX</div>
+        </div>
+        <div class="post" data-url="https://allinonereborn.com/spicetv-web/player.html?url=https%3A%2F%2Fallinonereborn.com%2Ftest.m3u8%3Fid%3D131&name=SONY%20PAL.">
+            <img src="https://brand-websites-prod.s3.ap-south-1.amazonaws.com/sonypal-live/show_images/default-schedule.jpg" alt="Post 1">
+            <div class="post-title">Sony PAL</div>
+        </div>
+        <div class="post" data-url="https://allinonereborn.com/spicetv-web/player.html?url=https%3A%2F%2Fallinonereborn.com%2Ftest.m3u8%3Fid%3D160&name=SONY%20WAH.">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6111b9175066933.64ad649d4d977.jpeg" alt="Post 1">
+            <div class="post-title">Sony WAH</div>
+        </div>
+        <div class="post" data-url="https://allinonereborn.com/spicetv-web/player.html?url=https%3A%2F%2Fallinonereborn.com%2Ftest.m3u8%3Fid%3D2981&name=SONY%20MOVIES">
+            <img src="https://i.ytimg.com/vi/KsQxQv-KaPA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAz_W1GcGyOzoMmozw99kXSp1sEOQ" alt="Post 1">
+            <div class="post-title">Sony Movies</div>
+        </div>
+        <div class="post" data-url="https://allinonereborn.com/spicetv-web/player.html?url=https%3A%2F%2Fallinonereborn.com%2Ftest.m3u8%3Fid%3D23798&name=SONY%20AATH">
+            <img src="https://www.indiantelevision.com/sites/default/files/images/tv-images/2023/12/29/6.jpg" alt="Post 1">
+            <div class="post-title">Sony AATH</div>
+        </div>
+        <div class="post" data-url="https://allinonereborn.com/spicetv-web/player.html?url=https%3A%2F%2Fallinonereborn.com%2Ftest.m3u8%3Fid%3D23819&name=SONY%20TEN%203">
+            <img src="https://sk-cricketlive.pages.dev/logo/Ten3_HD.png" alt="Post 1">
+            <div class="post-title">Sony Ten 3 HD</div>
+        </div>
+        <div class="post" data-url="https://allinonereborn.com/spicetv-web/player.html?url=https%3A%2F%2Fallinonereborn.com%2Ftest.m3u8%3Fid%3D23818&name=SONY%20TEN%202">
+            <img src="https://the-media-ant.mo.cloudinary.net/medias/5989ba91420c3c1917b603bb/1693896658148/star%20sports%20ten%202%20hd_logo.svg?tx=w_350" alt="Post 1">
+            <div class="post-title">Sony Ten 2 HD</div>
+        </div>
+
+        <div class="post" data-url="https://allinonereborn.com/spicetv-web/player.html?url=https%3A%2F%2Fallinonereborn.com%2Ftest.m3u8%3Fid%3D114&name=SONY%20SAB%20HD">
+            <img src="https://cdn.i.haymarketmedia.asia/?n=campaign-india%2Fcontent%2Fsonysab.jpg&h=630&w=1200&q=75&v=20170226&c=1" alt="Post 1">
+            <div class="post-title">Sony SAB HD</div>
+        </div>
+        <!-- Add more posts as needed -->
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <b><span>BY: Sameer sah</span></b>
+                <span class="close" id="close-popup">&times;</span>
+            </div>
+            <iframe id="popup-video" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sameer</p>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        hamburger.addEventListener('click', () => {
+            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Popup functionality
+        const posts = document.querySelectorAll('.post');
+        const popup = document.getElementById('popup');
+        const popupVideo = document.getElementById('popup-video');
+        const closePopup = document.getElementById('close-popup');
+
+        posts.forEach(post => {
+            post.addEventListener('click', () => {
+                const url = post.getAttribute('data-url');
+                popupVideo.src = url;
+                popup.style.display = 'flex';
+            });
+        });
+
+        closePopup.addEventListener('click', () => {
+            popup.style.display = 'none';
+            popupVideo.src = '';
+        });
+
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                popup.style.display = 'none';
+                popupVideo.src = '';
+            }
+        });
+    </script>
+</body>
+</html>
